@@ -1,0 +1,11 @@
+-default password appears to be 1234. Not default. 
+http://hbot.benou.fr/doku.php?id=rootooth_howto
+http://solidcoding.blogspot.com/2008/06/wake-up-roomba-using-latest-rootooth.html
+http://hbot.benou.fr/lib/exe/fetch.php?media=firefly-user-guide.pdf
+http://www.irobot.com/images/consumer/hacker/roomba_sci_spec_manual.pdf
+http://www.irobot.com/filelibrary/create/Create%20Manual_Final.pdf
+("U,57.6,N\n");
+
+
+
+http://jarrett.co/post/82423936659/nature-museum-install

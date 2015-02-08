@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboVance.Web", "RoboVance.Web\RoboVance.Web.csproj", "{91E10CCC-2DBF-403A-BF24-342441B50A96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboVance.Roomba", "RoboVance.Roomba\RoboVance.Roomba.csproj", "{6EE11892-3147-49E4-9302-EA9C7B2E4704}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboVance.Roomba.IntegrationTest", "RoboVance.Roomba.IntegrationTest\RoboVance.Roomba.IntegrationTest.csproj", "{0AA2D394-B23A-43E4-BCCC-F9AAD8FBF471}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboVance.Roomba.UnitTest", "RoboVance.Roomba.UnitTest\RoboVance.Roomba.UnitTest.csproj", "{D01FFD4E-80AA-42C9-BBAC-41B65285861F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoboVance.WindowsAgent", "RoboVance.WindowsAgent\RoboVance.WindowsAgent.csproj", "{1D0E7BB8-AC0B-4216-9AD5-78B93DE95335}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91E10CCC-2DBF-403A-BF24-342441B50A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E10CCC-2DBF-403A-BF24-342441B50A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E10CCC-2DBF-403A-BF24-342441B50A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E10CCC-2DBF-403A-BF24-342441B50A96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EE11892-3147-49E4-9302-EA9C7B2E4704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EE11892-3147-49E4-9302-EA9C7B2E4704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EE11892-3147-49E4-9302-EA9C7B2E4704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EE11892-3147-49E4-9302-EA9C7B2E4704}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AA2D394-B23A-43E4-BCCC-F9AAD8FBF471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AA2D394-B23A-43E4-BCCC-F9AAD8FBF471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AA2D394-B23A-43E4-BCCC-F9AAD8FBF471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AA2D394-B23A-43E4-BCCC-F9AAD8FBF471}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D01FFD4E-80AA-42C9-BBAC-41B65285861F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D01FFD4E-80AA-42C9-BBAC-41B65285861F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D01FFD4E-80AA-42C9-BBAC-41B65285861F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D01FFD4E-80AA-42C9-BBAC-41B65285861F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D0E7BB8-AC0B-4216-9AD5-78B93DE95335}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D0E7BB8-AC0B-4216-9AD5-78B93DE95335}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D0E7BB8-AC0B-4216-9AD5-78B93DE95335}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D0E7BB8-AC0B-4216-9AD5-78B93DE95335}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

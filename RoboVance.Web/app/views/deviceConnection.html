@@ -1,0 +1,17 @@
+﻿Message: <span>{{commandText}}</span>
+<br />
+<div ng-show="showConnection" data-ng-repeat="agent in agentDevices">
+    <div data-ng-repeat="device in agent.devices">
+        <span>{{agent.id}}</span>&nbsp;
+        <span>{{device}}</span>&nbsp;
+        <button ng-click="connectToDevice(agent.id, device)">Connect</button>
+    </div>
+</div>
+<br />
+<div ng-show="showControls">
+    <button ng-mousedown="forward()" ng-mouseup="stop()">Forward</button>
+    <button ng-mousedown="reverse()" ng-mouseup="stop()">Reverse</button>
+    <button ng-mousedown="left()" ng-mouseup="stop()">Left</button>
+    <button ng-mousedown="right()" ng-mouseup="stop()">Right</button>
+    <button ng-mousedown="stop()">Stop</button>
+</div>
