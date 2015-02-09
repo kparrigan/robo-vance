@@ -1,17 +1,21 @@
-﻿Message: <span>{{commandText}}</span>
-<br />
-<div ng-show="showConnection" data-ng-repeat="agent in agentDevices">
-    <div data-ng-repeat="device in agent.devices">
-        <span>{{agent.id}}</span>&nbsp;
-        <span>{{device}}</span>&nbsp;
-        <button ng-click="connectToDevice(agent.id, device)">Connect</button>
-    </div>
+﻿<div>
+    Message: <span>{{statusText}}</span>
 </div>
-<br />
-<div ng-show="showControls">
-    <button ng-mousedown="forward()" ng-mouseup="stop()">Forward</button>
-    <button ng-mousedown="reverse()" ng-mouseup="stop()">Reverse</button>
-    <button ng-mousedown="left()" ng-mouseup="stop()">Left</button>
-    <button ng-mousedown="right()" ng-mouseup="stop()">Right</button>
-    <button ng-mousedown="stop()">Stop</button>
+<div style="margin-top:20px;margin-bottom:20px;width:100%">
+    <table style="width:100%">
+        <thead>
+            <tr>
+                <td>Agent Id</td>
+                <td>Device Name</td>
+                <td>Connect</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="device in flattenedDevices">
+                <td style="width:33%">{{device.agentId}}</td>
+                <td style="width:33%">{{device.deviceName}}</td>
+                <td style="width:33%"><span ng-click="connectToDevice(device.agentId, device.deviceName)" class="glyphicon glyphicon-ok-sign connectIcon"></span></td>
+            </tr>
+        </tbody>
+    </table>
 </div>

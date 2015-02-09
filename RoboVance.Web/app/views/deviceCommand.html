@@ -1,0 +1,37 @@
+﻿<div>
+    Current Agent: <span>{{agentId}}</span><br />
+    Current Device: <span>{{deviceName}}</span><br />
+    Current Command: <span>{{commandText}}</span>
+</div>
+<div style="margin-top:20px;margin-bottom:20px;width:100%">
+    <div style="width:50%;float:left;">
+        <div style="width:100%;text-align:center">
+            <span ng-mousedown="forward()" ng-mouseup="stop()" class="glyphicon glyphicon-arrow-up commandIcon"></span>
+        </div>
+        <div style="width:100%;text-align:center;">
+            <div style="width:50%;text-align:left;float:left;">
+                <span ng-mousedown="left()" ng-mouseup="stop()" class="glyphicon glyphicon-share-alt icon-flipped commandIcon"></span>
+            </div>
+            <div style="width:50%;text-align:right;float:left;">
+                <span ng-mousedown="right()" ng-mouseup="stop()" class="glyphicon glyphicon-share-alt commandIcon"></span>
+            </div>
+        </div>
+        <div style="width:100%;text-align:center">
+            <span ng-mousedown="reverse()" ng-mouseup="stop()" class="glyphicon glyphicon-arrow-up icon-flipped-vert commandIcon"></span>
+        </div>
+    </div>
+    <div style="width:50%;float:left;padding-left:10px;">
+        <textarea style="min-width:500px;width:90%;min-height:500px;">
+            -This is some text
+            -This is some more text
+            -More Text
+            -This is some text
+            -This is some more text
+            -More Text
+        </textarea>
+    </div>
+</div>
+<div style="width:100%;">
+    <button ng-mousedown="stop()" class="btn-primary">Stop</button>
+    <button ng-mousedown="powerDown()" class="btn-primary">Power Down</button>
+</div>

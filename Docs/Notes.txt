@@ -9,3 +9,5 @@ http://www.irobot.com/filelibrary/create/Create%20Manual_Final.pdf
 
 
 http://jarrett.co/post/82423936659/nature-museum-install
+
+https://fabienroyer.wordpress.com/2010/11/11/where-to-find-parts-for-your-netduino/

@@ -88,39 +88,36 @@ namespace RoboVance.WindowsAgent
             _connection = new HubConnection(_baseUri, useDefaultUrl: true);
             _proxy = _connection.CreateHubProxy("deviceCommunicationHub");
             _connection.Start().Wait();
+            _proxy.Invoke("InitAgent", _agentId);
 
             
-            _proxy.On<Guid, String>("connectToDevice", (agentId, deviceName) =>
-                ConnectToDevice(agentId, deviceName)
+            _proxy.On<String>("connectToDevice", (deviceName) =>
+                ConnectToDevice(deviceName)
             );
 
-            _proxy.On<Guid, String>("disconnectFromDevice", (agentId, deviceName) =>
-                DisconnectFromDevice(agentId, deviceName)
+            _proxy.On<String>("disconnectFromDevice", (deviceName) =>
+                DisconnectFromDevice(deviceName)
             );
 
-            _proxy.On<Guid, String, String>("doCommand", (agentId, deviceName, commandName) =>
-                DoCommand(agentId, deviceName, commandName)
+            _proxy.On<String, String>("doCommand", (deviceName, commandName) =>
+                DoCommand(deviceName, commandName)
             );
         }
 
-        private void ConnectToDevice(Guid agentId, String deviceName)
+        private void ConnectToDevice(String deviceName)
         {
             try
             {
-                //TODO more granular messaging, so we don't have to check agent id
-                if (_agentId == agentId)
+                if (_roomba != null)
                 {
-                    if (_roomba != null)
-                    {
-                        _roomba.Dispose();
-                    }
+                    _roomba.Dispose();
+                }
 
-                    //TODO verify that this agent has access to this device.
-                    _roomba = new RoombaCreate(deviceName, CommunicationMethod.Bluetooth);
-                    _roomba.Start();
-                    _roomba.Control(); //TODO Control or Full?
-                    _proxy.Invoke("ConnectedToDevice", _agentId, deviceName);
-                }            
+                //TODO verify that this agent has access to this device.
+                _roomba = new RoombaCreate(deviceName, CommunicationMethod.Bluetooth);
+                _roomba.Start();
+                _roomba.Control(); //TODO Control or Full?
+                _proxy.Invoke("ConnectedToDevice", _agentId, deviceName);       
             }
             catch(Exception ex)
             {
@@ -129,65 +126,60 @@ namespace RoboVance.WindowsAgent
             }
         }
 
-        private void DisconnectFromDevice(Guid agentId, String deviceName)
+        private void DisconnectFromDevice(String deviceName)
         {
-            //TODO more granular messaging, so we don't have to check agent id
-            if (agentId == _agentId)
+            if (_roomba != null)
             {
-                if (_roomba != null)
+                try
                 {
-                    try
-                    {
-                        _roomba.PowerDown();
-                        _roomba.Dispose();
-                    }
-                    catch(Exception ex)
-                    {
-                        // TODO log exception
-                        // TODO failure message
-                    }
+                    _roomba.PowerDown();
+                    _roomba.Dispose();
+                }
+                catch(Exception ex)
+                {
+                    // TODO log exception
+                    // TODO failure message
                 }
             }
         }
 
-        private void DoCommand(Guid agentId, String deviceName, String commandName)
+        private void DoCommand(String deviceName, String commandName)
         {
-            //TODO more granular messaging, so we don't have to check agent id
-            if (agentId == _agentId)
+            if (_roomba != null)
             {
-                if (_roomba != null)
+                try
                 {
-                    try
+                    //TODO something better than this switch
+                    switch (commandName.ToLower())
                     {
-                        //TODO something better than this switch
-                        switch (commandName.ToLower())
-                        {
-                            case "forward":
-                                _roomba.Forward();
-                                break;
-                            case "reverse":
-                                _roomba.Reverse();
-                                break;
-                            case "left":
-                                _roomba.TurnLeft();
-                                break;
-                            case "right":
-                                _roomba.TurnRight();
-                                break;
-                            case "stop":
-                                _roomba.Stop();
-                                break;
-                            default:
-                                _roomba.Stop();
-                                break;
-                        }
-                    }
-                    catch(Exception ex)
-                    {
-                        // TODO log exception
-                        // TODO failure message
+                        case "forward":
+                            _roomba.Forward();
+                            break;
+                        case "reverse":
+                            _roomba.Reverse();
+                            break;
+                        case "left":
+                            _roomba.TurnLeft();
+                            break;
+                        case "right":
+                            _roomba.TurnRight();
+                            break;
+                        case "stop":
+                            _roomba.Stop();
+                            break;
+                        case "powerDown":
+                            _roomba.PowerDown();
+                            break;
+                        default:
+                            _roomba.Stop();
+                            break;
                     }
                 }
+                catch(Exception ex)
+                {
+                    // TODO log exception
+                    // TODO failure message
+                }                
             }
         }
 

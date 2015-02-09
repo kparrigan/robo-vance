@@ -48,6 +48,10 @@
         this.proxy.invoke('sendCommand', agentId, deviceName, 'stop');
     }
 
+    var powerDown = function (agentId, deviceName) {
+        this.proxy.invoke('sendCommand', agentId, deviceName, 'powerDown');
+    }
+
     return {
         initialize: initialize,
         connectToDevice: connectToDevice,
@@ -55,6 +59,7 @@
         reverse: reverse,
         left: left,
         right: right,
-        stop: stop
+        stop: stop,
+        powerDown: powerDown
     };
 }]);

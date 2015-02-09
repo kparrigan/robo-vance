@@ -128,8 +128,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\controllers\deviceCommandCtrl.js" />
     <Content Include="app\controllers\deviceConnectionCtrl.js" />
+    <Content Include="app\filters\flatten.js" />
     <Content Include="app\services\deviceCommunicationService.js" />
+    <Content Include="app\views\deviceCommand.html" />
     <Content Include="app\views\deviceConnection.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

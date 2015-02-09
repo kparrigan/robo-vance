@@ -7,6 +7,12 @@ app.config(['$routeProvider', function ($routeProvider) {
         .when('/', {
             controller: 'deviceConnectionCtrl',
             templateUrl: '/app/views/deviceConnection.html'
+        }).when('/connection/', {
+            controller: 'deviceConnectionCtrl',
+            templateUrl: '/app/views/deviceConnection.html'
+        }).when('/command/:agentId/device/:deviceName', {
+            controller: 'deviceCommandCtrl',
+            templateUrl: '/app/views/deviceCommand.html'
         })
 
     .otherwise({ redirectTo: '/' });
