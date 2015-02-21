@@ -62,12 +62,12 @@ namespace RoboVance.WindowsAgent
         #region Public Methods
         public void StartConsole(string[] args)
         {
-            this.OnStart(args);
+            OnStart(args);
         }
 
         public void StopConsole()
         {     
-            this.OnStop();
+            OnStop();
         }
         #endregion
 

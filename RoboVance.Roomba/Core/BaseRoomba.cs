@@ -46,7 +46,7 @@ namespace RoboVance.Roomba.Core
             // TODO remove magic number
             _commandLag = TimeSpan.FromMilliseconds(200);
 
-            this.Velocity = 200;
+            Velocity = 200;
         }
 
         public BaseRoomba(string deviceName, CommunicationMethod communicationMethod)
@@ -74,7 +74,7 @@ namespace RoboVance.Roomba.Core
             // TODO remove magic number
             _commandLag = TimeSpan.FromMilliseconds(200);
 
-            this.Velocity = 200;
+            Velocity = 200;
         }
 
         ~BaseRoomba()
@@ -108,7 +108,7 @@ namespace RoboVance.Roomba.Core
                 OpCodes.Start
             };
 
-            this.DoCommand(buffer);
+            DoCommand(buffer);
         }
 
         public virtual void Control()
@@ -118,7 +118,7 @@ namespace RoboVance.Roomba.Core
                 OpCodes.Control
             };
 
-            this.DoCommand(buffer);
+            DoCommand(buffer);
         }
 
         public virtual void Forward()
@@ -132,7 +132,7 @@ namespace RoboVance.Roomba.Core
                 ,0
             };
 
-            this.DoCommand(buffer);
+            DoCommand(buffer);
         }
 
         public virtual void Stop()
@@ -146,7 +146,7 @@ namespace RoboVance.Roomba.Core
                 ,0
             };
 
-            this.DoCommand(buffer);
+            DoCommand(buffer);
         }
 
         public virtual void Reverse()
@@ -162,7 +162,7 @@ namespace RoboVance.Roomba.Core
                 ,0
             };
 
-            this.DoCommand(buffer);
+            DoCommand(buffer);
         }
 
         public virtual void PowerDown()
@@ -172,7 +172,7 @@ namespace RoboVance.Roomba.Core
                 OpCodes.Power
             };
 
-            this.DoCommand(buffer);
+            DoCommand(buffer);
         }
 
         public virtual void Dock()
@@ -182,7 +182,7 @@ namespace RoboVance.Roomba.Core
                 OpCodes.Dock
             };
 
-            this.DoCommand(buffer);
+            DoCommand(buffer);
         }
 
         public virtual void TurnRight()
@@ -196,7 +196,7 @@ namespace RoboVance.Roomba.Core
                 ,255
             };
 
-            this.DoCommand(buffer);
+            DoCommand(buffer);
         }
 
         public virtual void TurnLeft()
@@ -210,7 +210,7 @@ namespace RoboVance.Roomba.Core
                 ,0
             };
 
-            this.DoCommand(buffer);
+            DoCommand(buffer);
         }
         #endregion
 

@@ -6,17 +6,17 @@
         connection = $.hubConnection();
 
         //Creating proxy
-        this.proxy = connection.createHubProxy('deviceCommunicationHub');
+        proxy = connection.createHubProxy('deviceCommunicationHub');
 
-        this.proxy.on('registeredDevices', function (message) {
+        proxy.on('registeredDevices', function (message) {
             $rootScope.$emit("registeredDevices", message);
         });
 
-        this.proxy.on('connectedToDevice', function (message) {
+        proxy.on('connectedToDevice', function (message) {
             $rootScope.$emit("connectedToDevice", message);
         });
 
-        this.proxy.on('connectionFailure', function (message) {
+        proxy.on('connectionFailure', function (message) {
             $rootScope.$emit("connectionFailure", message);
         });
 
@@ -25,31 +25,31 @@
     };
 
     var connectToDevice = function (agentId, deviceName) {
-        this.proxy.invoke('connectToDevice', agentId, deviceName);
+        proxy.invoke('connectToDevice', agentId, deviceName);
     };
 
     var forward = function (agentId, deviceName) {
-        this.proxy.invoke('sendCommand', agentId, deviceName, 'forward');
+        proxy.invoke('sendCommand', agentId, deviceName, 'forward');
     }
 
     var reverse = function (agentId, deviceName) {
-        this.proxy.invoke('sendCommand', agentId, deviceName, 'reverse');
+        proxy.invoke('sendCommand', agentId, deviceName, 'reverse');
     }
 
     var left = function (agentId, deviceName) {
-        this.proxy.invoke('sendCommand', agentId, deviceName, 'left');
+        proxy.invoke('sendCommand', agentId, deviceName, 'left');
     }
 
     var right = function (agentId, deviceName) {
-        this.proxy.invoke('sendCommand', agentId, deviceName, 'right');
+        proxy.invoke('sendCommand', agentId, deviceName, 'right');
     }
 
     var stop = function (agentId, deviceName) {
-        this.proxy.invoke('sendCommand', agentId, deviceName, 'stop');
+        proxy.invoke('sendCommand', agentId, deviceName, 'stop');
     }
 
     var powerDown = function (agentId, deviceName) {
-        this.proxy.invoke('sendCommand', agentId, deviceName, 'powerDown');
+        proxy.invoke('sendCommand', agentId, deviceName, 'powerDown');
     }
 
     return {

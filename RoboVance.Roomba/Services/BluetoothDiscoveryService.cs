@@ -20,7 +20,7 @@ namespace RoboVance.Roomba.Services
         {
             try
             {
-                return this.GetDevices().Select(d => d.DeviceName);
+                return GetDevices().Select(d => d.DeviceName);
             }
             catch (Exception ex)
             {
